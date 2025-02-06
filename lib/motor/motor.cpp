@@ -8,6 +8,10 @@ void enableMotor(){
 
 void disableMotor(){
     digitalWrite(EN,LOW);
+    digitalWrite(R_LPWM,LOW);
+    digitalWrite(L_LPWM,LOW);
+    digitalWrite(R_RPWM,LOW);
+    digitalWrite(L_RPWM,LOW);
 }
 
 void left(int pwm){
