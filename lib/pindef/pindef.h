@@ -6,7 +6,7 @@
 #define B_START 21
 #define B_CAL 17 // exchange with led
 #define BUZZER 2 
-int EN=5;
+#define EN 5
 #define R_RPWM 23
 #define R_LPWM 22
 #define L_RPWM 18
@@ -21,6 +21,6 @@ int EN=5;
 #define IR_4 32
 #define IR_5 35
 
-extern void pinsetup();
+extern void pinSetup();
 
 #endif // PINDEF_H

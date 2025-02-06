@@ -6,17 +6,16 @@
 
 void setup() {
   Serial.begin(115200);
-  pinsetup();
+  isButtonPressed(B_START);
+  pinSetup();
   enableMotor();
 }
 
 void loop() {
-  left(255);
-  right(255);
-  delay(1000);
-  left(100);
-  right(100);
-  delay(1000);
-  disableMotor();
+    left(255);
+    right(255);
+    delay(1000);
+    left(0);
+    right(0);
+    delay(1000);
 }
-

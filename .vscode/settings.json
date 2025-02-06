@@ -1,6 +1,7 @@
 {
     "idf.portWin": "COM3",
     "files.associations": {
-        "arduino.h": "c"
+        "arduino.h": "c",
+        "pindef.h": "c"
     }
 }
