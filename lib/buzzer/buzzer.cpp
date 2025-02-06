@@ -54,3 +54,11 @@ void buzzerTimerEnd() {
   delay(GAP);
   beepTone(SHORT_BEEP);  // Second short beep ("bep")
 }
+
+void buzzerTimerStart() {
+  beepTone(MEDIUM_BEEP); // Medium beep ("beeeep")
+  delay(GAP);
+  beepTone(SHORT_BEEP);  // First short beep ("bep")
+  delay(GAP);
+  beepTone(SHORT_BEEP);  // Second short beep ("bep")
+}

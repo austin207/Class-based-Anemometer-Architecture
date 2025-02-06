@@ -2,9 +2,9 @@
 #define PINDEF_H
 
 #define VBAT 15
-#define LED 34  // exchange with led
+#define LED 17  // exchange with led
 #define B_START 21
-#define B_CAL 17 // exchange with led
+#define B_CAL 34 // exchange with led
 #define BUZZER 2 
 #define EN 5
 #define R_RPWM 23

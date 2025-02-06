@@ -12,5 +12,5 @@ extern void buzzerCalibrationStart();
 extern void buzzerCalibrationClose();
 extern void buzzerLineFound();
 extern void buzzerTimerEnd();
-
+extern void buzzerTimerStart();
 #endif // BUZZER_H
