@@ -15,13 +15,23 @@ void disableMotor(){
 }
 
 void left(int pwm){
-    digitalWrite(L_LPWM,LOW);
-    analogWrite(L_RPWM,pwm);
+    if (pwm >= 0) {
+        digitalWrite(L_LPWM, LOW);
+        analogWrite(L_RPWM, pwm);
+    } else {
+        digitalWrite(L_RPWM, LOW);
+        analogWrite(L_LPWM, -pwm);  // Use absolute value for PWM.
+    }
 }
 
 void right(int pwm){
-    digitalWrite(R_LPWM,LOW);
-    analogWrite(R_RPWM,pwm);
+    if (pwm >= 0) {
+        digitalWrite(R_LPWM, LOW);
+        analogWrite(R_RPWM, pwm);
+    } else {
+        digitalWrite(R_RPWM, LOW);
+        analogWrite(R_LPWM, -pwm);
+    }
 }
 
 void brake(){

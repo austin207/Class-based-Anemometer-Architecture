@@ -9,8 +9,8 @@
 #define EN 5
 #define R_RPWM 23
 #define R_LPWM 22
-#define L_RPWM 18
-#define L_LPWM 19
+#define L_RPWM 19
+#define L_LPWM 18
 #define LS_1 13
 #define LS_2 12
 #define LS_3 14
