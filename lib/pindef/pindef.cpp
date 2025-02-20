@@ -10,5 +10,5 @@ void pinSetup(){
     pinMode(L_RPWM,OUTPUT);
     pinMode(R_LPWM,OUTPUT);
     pinMode(R_RPWM,OUTPUT);
-    pinMode(EN,OUTPUT);
+    pinMode(5,OUTPUT);
 }

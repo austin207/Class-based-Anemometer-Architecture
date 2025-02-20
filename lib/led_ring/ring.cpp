@@ -96,7 +96,7 @@ void ledSetup() {
   FastLED.clear();
   FastLED.show();
   FastLED.setBrightness(255);
-  FastLED.setMaxPowerInVoltsAndMilliamps(5, 1200);
+  FastLED.setMaxPowerInVoltsAndMilliamps(5, 500);
   for(int i=0;i<100;i++) patternColorWavedelay();
 }
 

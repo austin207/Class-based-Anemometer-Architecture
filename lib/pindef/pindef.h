@@ -3,16 +3,15 @@
 
 #define VBAT 15
 #define LED 17  // exchange with led
-#define B_START 21
-#define B_CAL 34 // exchange with led
+#define B_START 12
+#define B_CAL 21 // exchange with led // 12
 #define BUZZER 2 
-#define EN 5
 #define R_RPWM 23
 #define R_LPWM 22
 #define L_RPWM 19
 #define L_LPWM 18
 #define LS_1 13
-#define LS_2 12
+#define LS_2 34
 #define LS_3 14
 #define LS_4 27
 #define IR_1 26

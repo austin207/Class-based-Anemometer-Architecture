@@ -11,4 +11,6 @@ extern int threshold[9];
 extern int maxpwm;
 extern int previousError;
 extern int ref_line;
+extern int stopCount;
+extern int axisCount;
 #endif // VAR_H
