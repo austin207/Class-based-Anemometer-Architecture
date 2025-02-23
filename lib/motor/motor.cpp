@@ -1,41 +1,40 @@
-#include "motor.h"
-#include "pindef.h"
+#include "Motor.h"
 #include <Arduino.h>
-#include "BTS7960.h"
 
-BTS7960 leftMotor(5, L_LPWM, L_RPWM);
-BTS7960 rightMotor(5, R_LPWM, R_RPWM);
+Motor::Motor() 
+: leftMotor(5, PinDef::L_LPWM, PinDef::L_RPWM),
+  rightMotor(5, PinDef::R_LPWM, PinDef::R_RPWM)
+{
+}
 
-void enableMotor() {
+void Motor::enable() {
     leftMotor.Enable();
     rightMotor.Enable();
 }
 
-void disableMotor() {
+void Motor::disable() {
     leftMotor.Disable();
     rightMotor.Disable();
 }
 
-void left(int pwm) {
-    if (pwm >= 0) {
+void Motor::left(int pwm) {
+    if(pwm >= 0)
         leftMotor.TurnLeft(pwm);
-    } else {
-        leftMotor.TurnRight(-pwm); // Convert negative PWM to positive
-    }
+    else
+        leftMotor.TurnRight(-pwm);
 }
 
-void right(int pwm) {
-    if (pwm >= 0) {
+void Motor::right(int pwm) {
+    if(pwm >= 0)
         rightMotor.TurnLeft(pwm);
-    } else {
-        rightMotor.TurnRight(-pwm); // Convert negative PWM to positive
-    }
+    else
+        rightMotor.TurnRight(-pwm);
 }
 
-void brake(){
-    analogWrite(L_LPWM,100);
-    analogWrite(L_RPWM,100);
-    analogWrite(R_LPWM,100);
-    analogWrite(R_RPWM,100);
-    delay(500);   
+void Motor::brake() {
+    analogWrite(PinDef::L_LPWM, 100);
+    analogWrite(PinDef::L_RPWM, 100);
+    analogWrite(PinDef::R_LPWM, 100);
+    analogWrite(PinDef::R_RPWM, 100);
+    delay(500);
 }

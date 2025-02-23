@@ -1,25 +1,30 @@
 #ifndef PINDEF_H
 #define PINDEF_H
 
-#define VBAT 15
-#define LED 17  // exchange with led
-#define B_START 12
-#define B_CAL 21 // exchange with led // 12
-#define BUZZER 2 
-#define R_RPWM 23
-#define R_LPWM 22
-#define L_RPWM 19
-#define L_LPWM 18
-#define LS_1 13
-#define LS_2 34
-#define LS_3 14
-#define LS_4 27
-#define IR_1 26
-#define IR_2 25
-#define IR_3 33
-#define IR_4 32
-#define IR_5 35
+#include <Arduino.h>
 
-extern void pinSetup();
+class PinDef {
+public:
+    static const int VBAT = 15;
+    static const int LED = 17;
+    static const int B_START = 12;
+    static const int B_CAL = 21;
+    static const int BUZZER = 2;
+    static const int R_RPWM = 23;
+    static const int R_LPWM = 22;
+    static const int L_RPWM = 19;
+    static const int L_LPWM = 18;
+    static const int LS_1 = 13;
+    static const int LS_2 = 34;
+    static const int LS_3 = 14;
+    static const int LS_4 = 27;
+    static const int IR_1 = 26;
+    static const int IR_2 = 25;
+    static const int IR_3 = 33;
+    static const int IR_4 = 32;
+    static const int IR_5 = 35;
+
+    static void setupPins();
+};
 
 #endif // PINDEF_H

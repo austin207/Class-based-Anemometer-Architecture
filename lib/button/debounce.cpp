@@ -1,14 +1,15 @@
-#include "debounce.h"
-#include <arduino.h>
-#include "buzzer.h"
+#include "Debounce.h"
+#include <Arduino.h>
+#include "Buzzer.h"
 
-int isButtonPressed(int pin) {
-  if (digitalRead(pin) == HIGH) {
-    while (digitalRead(pin) == HIGH) {
-      delay(25);
+int Debounce::isButtonPressed(int pin) {
+    if (digitalRead(pin) == HIGH) {
+        while (digitalRead(pin) == HIGH) {
+            delay(25);
+        }
+        Buzzer buzzer;
+        buzzer.beepTone(100);
+        return 0;
     }
-    beepTone(100);
-    return 0;
-  } else return 1;
-  
+    return 1;
 }

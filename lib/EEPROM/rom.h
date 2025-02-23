@@ -1,13 +1,15 @@
-// rom.h
 #ifndef ROM_H
 #define ROM_H
 
 #include <Preferences.h>
-#include "var.h"
+#include "SystemVars.h"
 
-extern Preferences preferences;
+class ROM {
+public:
+    static void initialize();
+    static void update();
+private:
+    static Preferences preferences;
+};
 
-void initialize_rom();
-void update_rom();
-
-#endif
+#endif // ROM_H

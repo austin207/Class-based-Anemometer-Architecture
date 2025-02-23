@@ -1,64 +1,54 @@
+#include "Buzzer.h"
 #include <Arduino.h>
-#include "pindef.h"
-#include "buzzer.h"
 
-void beepTone(int duration) {
-  digitalWrite(BUZZER, HIGH);
-  delay(duration);
-  digitalWrite(BUZZER, LOW);
+void Buzzer::beepTone(int duration) {
+    digitalWrite(PinDef::BUZZER, HIGH);
+    delay(duration);
+    digitalWrite(PinDef::BUZZER, LOW);
 }
 
-
-void buzzerStart() {
-  beepTone(LONG_BEEP);  // Long beep ("beeeeeeeeeeeeep")
-  delay(GAP);           // Gap (you can adjust if needed)
-  beepTone(SHORT_BEEP); // Short beep ("bep")
+void Buzzer::buzzerStart() {
+    beepTone(LONG_BEEP);
+    delay(GAP);
+    beepTone(SHORT_BEEP);
 }
 
-// buzzer 3: "calibration start bep bep beeeep"
-// This plays two short beeps followed by a medium beep.
-void buzzerCalibrationStart() {
-  beepTone(SHORT_BEEP); // First short beep ("bep")
-  delay(GAP);
-  beepTone(SHORT_BEEP); // Second short beep ("bep")
-  delay(GAP);
-  beepTone(MEDIUM_BEEP); // Medium beep ("beeeep")
+void Buzzer::buzzerCalibrationStart() {
+    beepTone(SHORT_BEEP);
+    delay(GAP);
+    beepTone(SHORT_BEEP);
+    delay(GAP);
+    beepTone(MEDIUM_BEEP);
 }
 
-// buzzer 4: "calibration close beeeep bep bep"
-// This plays a medium beep followed by two short beeps.
-void buzzerCalibrationClose() {
-  beepTone(MEDIUM_BEEP); // Medium beep ("beeeep")
-  delay(GAP);
-  beepTone(SHORT_BEEP);  // First short beep ("bep")
-  delay(GAP);
-  beepTone(SHORT_BEEP);  // Second short beep ("bep")
+void Buzzer::buzzerCalibrationClose() {
+    beepTone(MEDIUM_BEEP);
+    delay(GAP);
+    beepTone(SHORT_BEEP);
+    delay(GAP);
+    beepTone(SHORT_BEEP);
 }
 
-// buzzer 5: "Line found bep bep bep"
-// This plays three short beeps.
-void buzzerLineFound() {
-  beepTone(SHORT_BEEP); // First short beep ("bep")
-  delay(GAP);
-  beepTone(SHORT_BEEP); // Second short beep ("bep")
-  delay(GAP);
-  beepTone(SHORT_BEEP); // Third short beep ("bep")
+void Buzzer::buzzerLineFound() {
+    beepTone(SHORT_BEEP);
+    delay(GAP);
+    beepTone(SHORT_BEEP);
+    delay(GAP);
+    beepTone(SHORT_BEEP);
 }
 
-// buzzer 6: "timer end bep beeeep bep"
-// This plays a short beep, a medium beep, then a short beep.
-void buzzerTimerEnd() {
-  beepTone(SHORT_BEEP);  // First short beep ("bep")
-  delay(GAP);
-  beepTone(MEDIUM_BEEP); // Medium beep ("beeeep")
-  delay(GAP);
-  beepTone(SHORT_BEEP);  // Second short beep ("bep")
+void Buzzer::buzzerTimerEnd() {
+    beepTone(SHORT_BEEP);
+    delay(GAP);
+    beepTone(MEDIUM_BEEP);
+    delay(GAP);
+    beepTone(SHORT_BEEP);
 }
 
-void buzzerTimerStart() {
-  beepTone(MEDIUM_BEEP); // Medium beep ("beeeep")
-  delay(GAP);
-  beepTone(SHORT_BEEP);  // First short beep ("bep")
-  delay(GAP);
-  beepTone(SHORT_BEEP);  // Second short beep ("bep")
+void Buzzer::buzzerTimerStart() {
+    beepTone(MEDIUM_BEEP);
+    delay(GAP);
+    beepTone(SHORT_BEEP);
+    delay(GAP);
+    beepTone(SHORT_BEEP);
 }

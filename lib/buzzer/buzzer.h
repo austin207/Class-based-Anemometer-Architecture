@@ -1,16 +1,23 @@
 #ifndef BUZZER_H
 #define BUZZER_H
 
-#define SHORT_BEEP 100     // "bep"
-#define MEDIUM_BEEP 300    // "beeeep"
-#define LONG_BEEP 500      // "beeeeeeeeeeeeep"
-#define GAP 100
+#include <Arduino.h>
+#include "PinDef.h"
 
-extern void beepTone(int duration);
-extern void buzzerStart();
-extern void buzzerCalibrationStart();
-extern void buzzerCalibrationClose();
-extern void buzzerLineFound();
-extern void buzzerTimerEnd();
-extern void buzzerTimerStart();
+class Buzzer {
+public:
+    static const int SHORT_BEEP = 100;
+    static const int MEDIUM_BEEP = 300;
+    static const int LONG_BEEP = 500;
+    static const int GAP = 100;
+    
+    void beepTone(int duration);
+    void buzzerStart();
+    void buzzerCalibrationStart();
+    void buzzerCalibrationClose();
+    void buzzerLineFound();
+    void buzzerTimerEnd();
+    void buzzerTimerStart();
+};
+
 #endif // BUZZER_H

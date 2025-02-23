@@ -1,0 +1,11 @@
+#ifndef BLUETOOTHCOMMAND_H
+#define BLUETOOTHCOMMAND_H
+
+// Bluetooth Commands
+#define CMD_GO "GO"
+#define CMD_STOP "STOP"
+#define CMD_RESET "RESET"
+#define CMD_RESTART "RESTART"
+#define CMD_CALIBRATE "CALIBRATE"
+
+#endif // BLUETOOTHCOMMAND_H

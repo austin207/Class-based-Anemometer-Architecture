@@ -1,5 +1,11 @@
 #ifndef DEBOUNCE_H
 #define DEBOUNCE_H
 
-extern int isButtonPressed(int pin);
+#include <Arduino.h>
+
+class Debounce {
+public:
+    static int isButtonPressed(int pin);
+};
+
 #endif // DEBOUNCE_H
