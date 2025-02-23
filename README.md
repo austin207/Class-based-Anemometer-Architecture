@@ -3,7 +3,7 @@
 This project is a refactored industrial-grade Anemometer firmware for the ESP32. The code has been reorganized using a class-based, object-oriented approach in C++ to improve modularity, maintainability, and readability while preserving the original logic.
 
 ## Project Structure
-
+```
 /Anemometer
 ├── lib
 │    ├── AxisControl
@@ -43,7 +43,7 @@ This project is a refactored industrial-grade Anemometer firmware for the ESP32.
 │           └── RobotController.cpp
 └── src
      └── main.cpp
-
+```
 
 ## Features
 
