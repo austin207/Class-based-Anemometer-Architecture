@@ -71,12 +71,11 @@ This project is a refactored industrial-grade Anemometer firmware for the ESP32.
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/username/Anemometer.git
+   [git clone https://github.com/username/Anemometer.git](https://github.com/austin207/Class-based-Anemometer-Architecture.git)
    cd Anemometer
 2. **Build and Upload:**
-Use PlatformIO or your preferred IDE to build and upload the firmware to your ESP32.
-
-For PlatformIO:
-```
-platformio run --target upload
-```
+    Use PlatformIO or your preferred IDE to build and upload the firmware to your ESP32.
+    For PlatformIO:
+    ```
+    platformio run --target upload
+    ```
