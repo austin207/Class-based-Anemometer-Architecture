@@ -1,48 +1,50 @@
+
 # Anemometer Project
 
-This project is a refactored industrial-grade Anemometer firmware for the ESP32. The code has been reorganized using a class-based, object-oriented approach in C++ to improve modularity, maintainability, and readability while preserving the original logic.
+This project is a refactored, industrial-grade firmware for an ESP32-based anemometer. The code has been reorganized using a class-based, object-oriented approach in C++ to improve modularity, maintainability, and readability—all while preserving the original logic.
 
 ## Project Structure
+
 ```
-/Anemometer
+Anemometer/
 ├── lib
-│    ├── AxisControl
-│    │      ├── AxisControl.h
-│    │      └── AxisControl.cpp
-│    ├── BluetoothApp
-│    │      ├── BluetoothHandler.h
-│    │      └── BluetoothHandler.cpp
-│    ├── BT_String
-│    │      └── BluetoothCommand.h
-│    ├── Button
-│    │      ├── Debounce.h
-│    │      └── Debounce.cpp
-│    ├── Buzzer
-│    │      ├── Buzzer.h
-│    │      └── Buzzer.cpp
-│    ├── EEPROM
-│    │      ├── ROM.h
-│    │      └── ROM.cpp
-│    ├── LEDRing
-│    │      ├── LEDRing.h
-│    │      └── LEDRing.cpp
-│    ├── LineFollow
-│    │      ├── LineFollow.h
-│    │      └── LineFollow.cpp
-│    ├── Motor
-│    │      ├── Motor.h
-│    │      └── Motor.cpp
-│    ├── PinDef
-│    │      ├── PinDef.h
-│    │      └── PinDef.cpp
-│    ├── SystemVars
-│    │      ├── SystemVars.h
-│    │      └── SystemVars.cpp
-│    └── StateMachine
-│           ├── RobotController.h
-│           └── RobotController.cpp
+│   ├── AxisControl
+│   │   ├── AxisControl.h
+│   │   └── AxisControl.cpp
+│   ├── BluetoothApp
+│   │   ├── BluetoothHandler.h
+│   │   └── BluetoothHandler.cpp
+│   ├── BT_String
+│   │   └── BluetoothCommand.h
+│   ├── Button
+│   │   ├── Debounce.h
+│   │   └── Debounce.cpp
+│   ├── Buzzer
+│   │   ├── Buzzer.h
+│   │   └── Buzzer.cpp
+│   ├── EEPROM
+│   │   ├── ROM.h
+│   │   └── ROM.cpp
+│   ├── LEDRing
+│   │   ├── LEDRing.h
+│   │   └── LEDRing.cpp
+│   ├── LineFollow
+│   │   ├── LineFollow.h
+│   │   └── LineFollow.cpp
+│   ├── Motor
+│   │   ├── Motor.h
+│   │   └── Motor.cpp
+│   ├── PinDef
+│   │   ├── PinDef.h
+│   │   └── PinDef.cpp
+│   ├── SystemVars
+│   │   ├── SystemVars.h
+│   │   └── SystemVars.cpp
+│   └── StateMachine
+│       ├── RobotController.h
+│       └── RobotController.cpp
 └── src
-     └── main.cpp
+    └── main.cpp
 ```
 
 ## Features
@@ -71,11 +73,45 @@ This project is a refactored industrial-grade Anemometer firmware for the ESP32.
 1. **Clone the Repository:**
 
    ```bash
-   [git clone https://github.com/username/Anemometer.git](https://github.com/austin207/Class-based-Anemometer-Architecture.git)
+   git clone https://github.com/austin207/Class-based-Anemometer-Architecture.git
    cd Anemometer
+   ```
+
 2. **Build and Upload:**
-    Use PlatformIO or your preferred IDE to build and upload the firmware to your ESP32.
-    For PlatformIO:
-    ```
-    platformio run --target upload
-    ```
+
+   Use PlatformIO or your preferred IDE to build and upload the firmware to your ESP32.
+
+   For PlatformIO:
+
+   ```bash
+   platformio run --target upload
+   ```
+
+## Usage
+
+Once uploaded, the firmware will:
+
+- Perform sensor calibration and line following.
+- Control motor actions based on the state machine implemented in `RobotController.cpp`.
+- Allow control via physical buttons or over Bluetooth with commands like `GO` and `CALIBRATE`.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit pull requests with any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+### Final Steps
+
+1. **Save the above content into a file named `README.md`** in your project’s root folder.
+2. **Add, commit, and push the file to your repository:**
+
+   ```bash
+   git add README.md
+   git commit -m "Add improved README file"
+   git push
+   ```
