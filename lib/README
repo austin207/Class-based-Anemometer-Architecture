@@ -1,46 +1,82 @@
+# Anemometer Project
 
-This directory is intended for project specific (private) libraries.
-PlatformIO will compile them to static libraries and link into executable file.
+This project is a refactored industrial-grade Anemometer firmware for the ESP32. The code has been reorganized using a class-based, object-oriented approach in C++ to improve modularity, maintainability, and readability while preserving the original logic.
 
-The source code of each library should be placed in an own separate directory
-("lib/your_library_name/[here are source files]").
+## Project Structure
 
-For example, see a structure of the following two libraries `Foo` and `Bar`:
+/Anemometer
+├── lib
+│    ├── AxisControl
+│    │      ├── AxisControl.h
+│    │      └── AxisControl.cpp
+│    ├── BluetoothApp
+│    │      ├── BluetoothHandler.h
+│    │      └── BluetoothHandler.cpp
+│    ├── BT_String
+│    │      └── BluetoothCommand.h
+│    ├── Button
+│    │      ├── Debounce.h
+│    │      └── Debounce.cpp
+│    ├── Buzzer
+│    │      ├── Buzzer.h
+│    │      └── Buzzer.cpp
+│    ├── EEPROM
+│    │      ├── ROM.h
+│    │      └── ROM.cpp
+│    ├── LEDRing
+│    │      ├── LEDRing.h
+│    │      └── LEDRing.cpp
+│    ├── LineFollow
+│    │      ├── LineFollow.h
+│    │      └── LineFollow.cpp
+│    ├── Motor
+│    │      ├── Motor.h
+│    │      └── Motor.cpp
+│    ├── PinDef
+│    │      ├── PinDef.h
+│    │      └── PinDef.cpp
+│    ├── SystemVars
+│    │      ├── SystemVars.h
+│    │      └── SystemVars.cpp
+│    └── StateMachine
+│           ├── RobotController.h
+│           └── RobotController.cpp
+└── src
+     └── main.cpp
 
-|--lib
-|  |
-|  |--Bar
-|  |  |--docs
-|  |  |--examples
-|  |  |--src
-|  |     |- Bar.c
-|  |     |- Bar.h
-|  |  |- library.json (optional, custom build options, etc) https://docs.platformio.org/page/librarymanager/config.html
-|  |
-|  |--Foo
-|  |  |- Foo.c
-|  |  |- Foo.h
-|  |
-|  |- README --> THIS FILE
-|
-|- platformio.ini
-|--src
-   |- main.c
 
-and a contents of `src/main.c`:
+## Features
+
+- **Modular Design:** Each hardware and logical component is encapsulated within its own class.
+- **State Machine:** Implements a robust state machine for calibration, line following, axis control, and more.
+- **Bluetooth Communication:** Supports commands via Bluetooth using the ESP32's BluetoothSerial.
+- **Visual Feedback:** Uses LED patterns for status indication and debugging.
+- **EEPROM Integration:** Manages persistent calibration data using the Preferences library.
+- **Motor Control:** Utilizes the BTS7960 driver library for robust motor control.
+
+## Getting Started
+
+### Requirements
+
+- **Hardware:** ESP32 (esp32doit-devkit-v1 recommended)  
+- **Libraries:** 
+  - Arduino framework for ESP32  
+  - [BTS7960](https://github.com/your-library-url)  
+  - [FastLED](http://fastled.io/)  
+  - [QTRSensors](https://www.pololu.com/docs/0J18)  
+  - Preferences (included with ESP32 Arduino framework)
+
+### Setup and Build
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/username/Anemometer.git
+   cd Anemometer
+2. **Build and Upload:**
+Use PlatformIO or your preferred IDE to build and upload the firmware to your ESP32.
+
+For PlatformIO:
 ```
-#include <Foo.h>
-#include <Bar.h>
-
-int main (void)
-{
-  ...
-}
-
+platformio run --target upload
 ```
-
-PlatformIO Library Dependency Finder will find automatically dependent
-libraries scanning project source files.
-
-More information about PlatformIO Library Dependency Finder
-- https://docs.platformio.org/page/librarymanager/ldf.html
